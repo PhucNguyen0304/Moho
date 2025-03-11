@@ -93,7 +93,7 @@ useEffect(() => {
 
       <Footer/>
       <TestTrapi/>
-    {/**<Test/>   */} 
+      
     </>
     </ShopContextProvider>
   )

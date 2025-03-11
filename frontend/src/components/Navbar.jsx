@@ -246,6 +246,13 @@ useEffect(() => {
                                                  handleClick()
 
                         }
+                        } className='pl-5 border-b-2 border-slate-300 text-xl font-medium shadow-xl text-white pb-5' to='/articles'>
+                            <p>Bài Viết</p>
+                        </NavLink>
+                        <NavLink onClick={() => {setVisible(!visible)
+                                                 handleClick()
+
+                        }
                         } className='pl-5 border-b-2 border-slate-300 text-xl font-medium shadow-xl text-white pb-5' to='/showroom'>
                             <p>ShowRoom</p>
                         </NavLink>
@@ -266,6 +273,9 @@ useEffect(() => {
                         </Link>
                         <Link onClick={handleClick} className='text-xl font-medium pb-5' to='/office'>
                            <p onClick={()=>{setFilterProducts(products),setSearch('')}}>Văn Phòng</p>
+                        </Link>
+                        <Link onClick={handleClick} className='text-xl font-medium pb-5' to='/articles'>
+                           <p onClick={()=>{setFilterProducts(products),setSearch('')}}>Bài Viết</p>
                         </Link>
                         <Link onClick={handleClick} className='text-xl font-medium pb-5' to='/showroom'>
                            <p onClick={()=>{setFilterProducts(products),setSearch('')}}>Show Room</p>

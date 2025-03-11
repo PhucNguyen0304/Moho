@@ -13,6 +13,7 @@ import UpdateUser from "./components/UpdateUser.jsx";
 import Purchase from "./components/Purchase.jsx";
 import Test from './components/test.jsx'
 import Messages from "./components/Messages.jsx";
+import Article from "./pages/Article.jsx";
 export const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 const App = () => {
@@ -47,6 +48,7 @@ const App = () => {
                                 <Route path='/listpurchase' element={<Purchase/>}/>
                                 <Route path='/test' element={<Test/>}/>
                                 <Route path='/messages' element={<Messages/>}/>
+                                <Route path='/article' element={<Article/>}/>
                             </Routes>
                         </div>
                     </div>

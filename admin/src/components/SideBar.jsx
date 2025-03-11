@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { assets } from '../assets/assets'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser,faChevronDown,faMessage } from "@fortawesome/free-solid-svg-icons";
+import { faUser,faChevronDown,faMessage, faNewspaper } from "@fortawesome/free-solid-svg-icons";
 const SideBar = () => {
   const [showSideBar,setShowSideBar] = useState(true)
   return (
@@ -47,6 +47,13 @@ const SideBar = () => {
                     <p>TIN NHẮN</p>
                 </div>
             </NavLink>
+            <NavLink to='/article'>
+                <div onClick={()=>setShowSideBar(!showSideBar)} className='flex items-center gap-4 border border-slate-300  py-4 text-xl font-medium text-gray-700 px-4'>
+                <FontAwesomeIcon icon={faNewspaper} bounce />
+                    <p>BÀI VIẾT</p>
+                </div>
+            </NavLink>
+            
         </div>
     </div>
   )

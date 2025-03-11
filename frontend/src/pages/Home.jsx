@@ -5,7 +5,7 @@ import New from '../components/New.jsx'
 import BestSeller from '../components/BestSeller.jsx'
 import Partner from '../components/Partner.jsx'
 import Policy from '../components/Policy.jsx'
-
+import ArticleHome from '../components/ArticleHome.jsx'
 const Home = () => {
   useEffect(()=> {
   },[])
@@ -15,8 +15,8 @@ const Home = () => {
     <New/>
     <BestSeller/>
     <Partner/>
+    <ArticleHome/>
     <Policy/>
-    
     </>
   )
 }

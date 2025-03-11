@@ -24,6 +24,9 @@ import ShopContextProvider, { ShopContext } from './context/ShopContextProvider.
 import Purchase from './components/Purchase.jsx'
 import ChatBox from './components/ChatBox.jsx'
 import io from 'socket.io-client';
+import ArticleDetail from './pages/ArticleDetail.jsx'
+import TestTrapi from './components/TestTrapi.jsx'
+import Articles from './pages/Articles.jsx'
 import axios from 'axios'
 
 export const backendUrl = import.meta.env.VITE_BACKEND_URL;
@@ -82,11 +85,14 @@ useEffect(() => {
           <Route path='/order' element = {<Orders user = {user}/>}></Route>
           <Route path='/paymentinfor' element = {<PaymentInfor/>}></Route>
           <Route path='/purchase' element = {<Purchase/>}></Route>
+          <Route path='/articles' element = {<Articles/>}></Route>
+          <Route path='/article/:articleId' element = {<ArticleDetail/>}></Route>
       </Routes>
       <ChatBox user = {user}/>
       <GoToTopButton/>
 
       <Footer/>
+      <TestTrapi/>
     {/**<Test/>   */} 
     </>
     </ShopContextProvider>

@@ -10,6 +10,7 @@ import bodyParser from 'body-parser';
 import purchaseRoute from './routes/purchaseRoute.js'
 import msgRoute from './routes/msgRoute.js'
 import reviewProductRoute from './routes/reviewProductRoute.js'
+import articleRoute from './routes/articleImg.js'
 import { userJoin ,getUsersOnline, userLeave } from './utils/users.js'
 const app = express()
 
@@ -83,12 +84,9 @@ connectDB()
 connectCloudinary()
 //middle Ware
 
-//middle ware]
-app.use(express.json()); // To parse JSON payloads
-app.use(express.urlencoded({ extended: true })); 
-
-
-
+//inscrease limite upload
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
 //end pointer
 app.get((''),(req,res)=> {
     res.send('API WORKING FOR MOHO , PORT ' + PORT)
@@ -99,4 +97,5 @@ app.use('/api/payment',paymentRoute)
 app.use('/api/purchase',purchaseRoute)
 app.use('/api/message',msgRoute)
 app.use('/api/review',reviewProductRoute)
+app.use('/api/article',articleRoute)
 server.listen(PORT,()=> {console.log("LISTENING PORT " + PORT)})

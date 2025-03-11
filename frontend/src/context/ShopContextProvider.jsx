@@ -26,6 +26,7 @@ const ShopContextProvider = ({cartObj,setCartObj,user,setUser,children}) => {
     const [purchase ,setPurchases] = useState([])
     const [ text,setText ] = useState('')
     const [ messages,setMessages ] = useState([])
+    const [articles, setArticles] = useState([])
     
     useEffect(()=> {
         console.log(messages)
@@ -343,8 +344,27 @@ const ShopContextProvider = ({cartObj,setCartObj,user,setUser,children}) => {
             toast.error(error.message)
         }
     }
-    //Upload cartData to database
 
+    // Get Articles
+    const getArticles = async() => {
+        try {
+            const response = await axios.get(backendUrl + '/api/article/getarticle')
+            if(response.data.success) {
+                setArticles(response.data.articles)
+            } else {
+                console.log(response.data)
+            }
+        }catch(error) {
+            console.log(error)
+            toast.error(error.message)
+        }
+    }
+
+
+
+    useEffect(()=> {
+        getArticles()
+    },[])
      useEffect(()=> {
          getProductData()
      },[])
@@ -369,7 +389,8 @@ const ShopContextProvider = ({cartObj,setCartObj,user,setUser,children}) => {
         subCategory,setSubCategory,search,setSearch,filterProducts,setFilterProducts,
         cartItems,setCartItems,addToCart,totalAmount,setTotalAmount,cartData,setCartData,totalAmount,
         totalProductQuanlity,setTotalProductQuanlity,updateQuanlity,deleteProductCart,user,visibleInfor,setVisibleInfor,saveCart,
-        updateCartDB,sendPurchase,inforPay,setInforPay,sendRequest,purchase ,setPurchases, messages,setMessages,sendMessage
+        updateCartDB,sendPurchase,inforPay,setInforPay,sendRequest,purchase ,setPurchases, messages,setMessages,sendMessage,
+        articles, setArticles
     }
     return (
         <ShopContext.Provider value={value}>
